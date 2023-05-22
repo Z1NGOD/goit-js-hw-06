@@ -12,3 +12,25 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+// Напиши скрипт для створення галереї зображень на підставі масиву даних. HTML містить список ul.gallery.
+// Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>.
+//  Для створення розмітки використовуй шаблонні рядки і метод insertAdjacentHTML().
+
+// Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
+// Додай мінімальне оформлення галереї флексбоксами або грідами через CSS класи.
+const galleryEl = document.querySelector('.gallery');
+const imgArray = images.map(img => {
+  galleryEl.insertAdjacentHTML('afterbegin', `<li><img src="${img.url}" alt="${img.alt}"></li>`);
+});
+galleryEl.style.display = 'flex';
+galleryEl.style.flexWrap = 'wrap';
+galleryEl.style.justifyContent = 'space-between';
+galleryEl.style.width = '500px'
+
+const liItem = document.querySelectorAll('li');
+liItem.forEach(item => {
+  item.style.display = 'flex';
+  item.style.width = '100px';
+  item.style.height = '100px';
+});
+
