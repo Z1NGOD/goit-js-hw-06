@@ -13,17 +13,21 @@
 const form = document.querySelector(".login-form");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (e.target.value === "") {
+
+    const { email, password } = e.target.elements;
+    const emailValue = email.value;
+    const passwordValue = password.value;
+
+    if (emailValue === "" || passwordValue === "") {
         alert("All fields must be filled!");
+        return; 
     }
     
-    const { email, password } = e.target.elements;
     const formData = {
-    email: email.value,
-    password: password.value
+        email: emailValue,
+        password: passwordValue
     };
 
     console.log(formData);
-    
-    
-})
+});
+
