@@ -10,6 +10,8 @@
 // використовуй властивість elements.
 // Виведи об'єкт із введеними даними в консоль і очисти значення 
 // полів форми методом reset.
+
+
 const form = document.querySelector(".login-form");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -30,4 +32,5 @@ form.addEventListener("submit", (e) => {
 
     console.log(formData);
 });
+
 
