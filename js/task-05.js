@@ -6,9 +6,9 @@ const inputEl = document.querySelector("#name-input");
 const outputEl = document.querySelector("#name-output");
 inputEl.addEventListener("input", (e) => {
     if (e.target.value === "") {
-        outputEl.textContent = "Anonymous";
+       return outputEl.textContent = "Anonymous";
     }
-    outputEl.textContent = e.target.value;
+    return outputEl.textContent = e.target.value;
         
     
 })
